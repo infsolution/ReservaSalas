@@ -1,12 +1,15 @@
 <?php
-class Day{
-    private $hours;
-    private $reserves;
+class Group{
+    private $students;
+    private $observ;
+            
     function __construct() {
         
     }
+    
     function __destruct() {
         
     }
+    
 }
 
