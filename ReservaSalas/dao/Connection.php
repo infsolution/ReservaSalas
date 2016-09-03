@@ -6,13 +6,13 @@ class Connection{
     private $database;
     private $dbCharset;
     private $dbPrefix;
-    function __construct($db) {
+    function __construct() {
         $this->dbHost='localhost';
         $this->dbUser='root';
         $this->dbPasswd='marcelia';
-        $this->database= $db;
+        $this->database= 'saldb';
         $this->dbCharset='utf8';
-        $this->dbPrefix='inf';
+        $this->dbPrefix='sal';
     }
     function __destruct() {
         
