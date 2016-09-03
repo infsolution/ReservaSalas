@@ -1,6 +1,7 @@
 <?php
 
 class Reserve{
+    private $idReserve;
     private $hoaryStart;
     private $horaryEnd;
     private $roon;
@@ -11,7 +12,12 @@ class Reserve{
     function __destruct() {
         
     }
-    
+    function getIdReserve(){
+        return $this->idReserve;
+    }
+    function setIdReserve($idReserve){
+        $this->idReserve=$idReserve;
+    }
     function getHoraryStart(){
         return $this->hoaryStart;
     }
