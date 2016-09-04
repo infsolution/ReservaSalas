@@ -4,27 +4,34 @@
     </head>
     <body>
         <?php
-        //require 'dao/DReserve.php';
-        require 'model/Reserve.php';
-        require 'dao/Connection.php';
-        $con = new Connection();
-        $res = new Reserve();
+        require 'model/Day.php';
+        require 'dao/DDay.php';
+        $dateDb = date("Y-m-d");
+        echo $dateDb;
+        $date = date("d/m/Y");
+        echo $date."<br>";
         //$dr = new DReserve();
         //$res->setHoraryStart('17:00');
         //$res->setHoraryEnd('18:00');
         //$res->setRoon('1');
         //$res->setGroup('459');
-        $data = $con->DBSelect('reserve',null,"*");
+       // $data = $dr->DRSelect('reserve');
         //echo $res->toString();
         //var_dump($dr->DRinsert($res));
-        $res->setIdReserve($data[0]['sal_id_reserve']);
-        $res->setHoraryStart($data[0]['sal_horary_start']);
-        $res->setHoraryEnd($data[0]['sal_horary_end']);
-        $res->setRoon($data[0]['sal_id_room']);
-        $res->setGroup($data[0]['sal_id_group']);
-        echo $res->toString();
-         //var_dump($data[0]);
+        //$res = $dr->DRNewObject($data[0]);
+       // echo $res->toString();
+         //var_dump($data);
          //var_dump($res);
+        $day = new Day($dateDb);
+        $dd = new DDay();
+        var_dump($dd->DDselect('day'));
+       // $day->loadReserves('reserve');
+        //var_dump($day->getReserves());
+        /*$res=$day->getReserves();
+        foreach ($res as $value) {
+    echo $value->toString();
+}*/
+        
         ?>
     </body>
     

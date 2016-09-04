@@ -6,7 +6,8 @@ class Reserve{
     private $horaryEnd;
     private $roon;
     private $group;
-    function __construct() {
+    private $day;
+            function __construct() {
         
     }
     function __destruct() {
@@ -43,6 +44,13 @@ class Reserve{
         $this->group = $group;
     }
     
+    function getDay(){
+        return $this->day;
+    } 
+    function setDay($day){
+        $this->day=$day;
+    }
+            
     function toString(){
         return "Horario inicio: $this->hoaryStart<br>Horario fim: $this->horaryEnd"
                 . "<br>Grupo: $this->group<br>Sala: $this->roon<br>";

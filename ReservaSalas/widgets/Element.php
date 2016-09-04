@@ -15,11 +15,11 @@ class Element{
     function open(){
         echo "<{$this->name}";
         if($this->properties){
-            foreach ($this->properties as $name=>$values){
-                echo "{$name}=\"{$values}\"";
+            foreach ($this->properties as $name=>$value){
+                echo " {$name}=\"{$value}\"";
             }
         }
-        echo">" ;
+        echo'>' ;
     }
     function show(){
         $this->open();
