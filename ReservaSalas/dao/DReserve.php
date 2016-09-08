@@ -11,11 +11,7 @@ class DReserve{
     }
     function DRinsert($reserve){
         $link = $this->conn->DBConnection();
-        $data = array('sal_horary_start'=>$reserve->getHoraryStart(),
-                      'sal_horary_end'=>$reserve->getHoraryEnd(),
-                      'sal_id_room'=>$reserve->getRoon(),
-                      'sal_id_group'=>$reserve->getGroup());
-        $ws=$this->conn->DBInsert('reserve', $data);
+        $ws=$this->conn->DBInsert('reserve', $reserve);
         $this->conn->DBCloseConnection($link);
         return $ws;
     }
@@ -33,7 +29,7 @@ class DReserve{
         $res->setHoraryEnd($data['sal_horary_end']);
         $res->setRoon($data['sal_id_room']);
         $res->setGroup($data['sal_id_group']);
-        $res->setDay($data['sal_id_day']);
+        $res->setDay($data['sal_day']);
         return $res;
     }
     function loadReserves($table){
@@ -43,5 +39,16 @@ class DReserve{
             $this->reserves[] =  $this->DRNewObject($data[$i]);
         }
         return $this->reserves;
+    }
+    function upStrReserv($reserves){
+        $upString="";
+        for($i=0;$i<count($reserves);$i++){
+            if($upString==""){
+            $upString.="{$reserves[$i]->toString()}";
+            }else{
+               $upString.=",{$reserves[$i]->toString()}"; 
+            }
+        }
+        return $upString;
     }
 }

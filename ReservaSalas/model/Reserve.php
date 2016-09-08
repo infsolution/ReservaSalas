@@ -7,12 +7,13 @@ class Reserve{
     private $roon;
     private $group;
     private $day;
-            function __construct() {
+    function __construct() {
         
     }
     function __destruct() {
         
-    }
+    } 
+            
     function getIdReserve(){
         return $this->idReserve;
     }
@@ -52,8 +53,7 @@ class Reserve{
     }
             
     function toString(){
-        return "Horario inicio: $this->hoaryStart<br>Horario fim: $this->horaryEnd"
-                . "<br>Grupo: $this->group<br>Sala: $this->roon<br>";
+        return "{title: '{$this->group}', start: '{$this->day}T{$this->hoaryStart}', end: '{$this->day}T{$this->horaryEnd}'}";
     }
     
 }
