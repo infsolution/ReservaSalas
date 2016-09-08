@@ -3,7 +3,7 @@ require 'Connection.php';
 class DDay{
     private $conn;
     function __construct() {
-         $this->conn = new Connection();
+         $this->conn = Connection::getInstance(); 
     }
     function __destruct() {
         

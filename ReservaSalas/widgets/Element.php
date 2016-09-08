@@ -21,6 +21,7 @@ class Element{
         }
         echo'>' ;
     }
+    
     function show(){
         $this->open();
         echo "\n";

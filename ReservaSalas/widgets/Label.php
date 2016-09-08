@@ -1,5 +1,5 @@
 <?php
-class ILabel extends IField{
+class Label extends Field{
     private $fontFace;
     private $fontSize;
     private $fontColor;

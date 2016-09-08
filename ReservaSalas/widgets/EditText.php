@@ -1,5 +1,5 @@
 <?php
-class IEditText extends IField{
+class EditText extends Field{
     function show(){
         $this->tag->name= $this->name;
         $this->tag->value=  $this->value;

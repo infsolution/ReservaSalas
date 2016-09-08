@@ -1,5 +1,5 @@
 <?php
-class IForm{
+class Form{
     protected $fields;
     private $name;
     function __construct($name) {

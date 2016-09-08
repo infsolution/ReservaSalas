@@ -24,7 +24,9 @@
          //var_dump($res);
         $day = new Day($dateDb);
         $dd = new DDay();
-        var_dump($dd->DDselect('day'));
+        $arr=$dd->DDselect('day');
+        //var_dump($arr);
+        echo json_encode($arr);
        // $day->loadReserves('reserve');
         //var_dump($day->getReserves());
         /*$res=$day->getReserves();

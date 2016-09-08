@@ -1,5 +1,5 @@
 <?php
-abstract class IField{
+abstract class Field{
     protected $name;
     protected $size;
     protected $value;

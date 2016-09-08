@@ -6,7 +6,8 @@ class Connection{
     private $database;
     private $dbCharset;
     private $dbPrefix;
-    function __construct() {
+    static  $instance=false;
+    private function __construct() {
         $this->dbHost='localhost';
         $this->dbUser='root';
         $this->dbPasswd='marcelia';
@@ -17,6 +18,13 @@ class Connection{
     function __destruct() {
         
     }
+    public function getInstance(){
+        if(!Connection::$instance){
+            Connection::$instance = new Connection();
+        }
+        return Connection::$instance;
+    }
+            
     function DBConnection(){
     $link = mysqli_connect($this->dbHost, $this->dbUser, $this->dbPasswd, $this->database) or die(mysqli_error($link));
     mysqli_set_charset($link, $this->dbCharset)or die(mysql_error($link));
