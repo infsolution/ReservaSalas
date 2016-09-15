@@ -1,5 +1,5 @@
 <?php
-class IStyle{
+class Style{
     private $name;
     private $properties;
     private static $loaded;
@@ -11,7 +11,7 @@ class IStyle{
         $this->properties[$name]=$value;
     }
     function show(){
-        if(!self::$loaded[$this->name]){
+        if(self::$loaded[$this->name]){
             echo "<style type = 'text/css' media = 'screen'>";
             echo ".{$this->name}\n";
             echo "{\n";

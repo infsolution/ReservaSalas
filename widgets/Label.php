@@ -7,7 +7,7 @@ class Label extends Field{
     
     function __construct($value){
         $this->setValue($value);
-        $this->tag = new IElement('font');
+        $this->tag = new Element('font');
         $this->fontSize='14';
         $this->fontColor='black';
         $this->fontFace='arial';
@@ -26,6 +26,6 @@ class Label extends Field{
                 "color:{$this->fontColor};".
                   "font-size:{$this->fontSize}";
           $this->tag->add($this->value);
-          //$this->tag->show();
+          $this->tag->show();
     }
 }

@@ -4,43 +4,40 @@
     </head>
     <body>
         <?php
-        require 'dao/DReserve.php';
-        $dateDb = date("Y-m-d");
-        echo $dateDb."<br>";
-        $date = date("d/m/Y");
-        //echo $date."<br>";
-        $dr = new DReserve();
-        //$res->setHoraryStart('16:00');
-        //$res->setHoraryEnd('18:00');
-        //$res->setRoon('1');
-        //$res->setGroup('459');
-        //$res->setDay('2016-09-11');
-        $dataRes =  array('sal_horary_start'=>'16:00',
-                      'sal_horary_end'=>'18:00',
-                      'sal_id_room'=>2,
-                      'sal_id_group'=>12,
-                      'sal_day'=>'2017-10-11'
-                        );
-        //$res = $dr->DRNewObject($dataRes);
-        //$data = $dr->DRSelect('reserve');
-        //$res = $dr->DRNewObject($data[4]);
-        //echo $res->toString();
-        //var_dump($dr->DRinsert($dataRes));
-        $resTt=$dr->loadReserves('reserve');
-        //var_dump($resTt);
-        echo $dr->upStrReserv($resTt);
-        //echo $res->toString();
-         //var_dump($data);
-         
-        //var_dump($arr);
-        //echo json_encode($arr);
-       // $day->loadReserves('reserve');
-        //var_dump($day->getReserves());
-        /*$res=$day->getReserves();
-        foreach ($res as $value) {
-    echo $value->toString();
-}*/
+        function __autoload($classe){
+    if(file_exists("widgets/{$classe}.php")){
+        require "widgets/{$classe}.php";
+
+    }
+}
+        /*$form= new Form('meu_form');
+        $tab = new Table();
+        $tab->width=400;
+        $tab->border=1;
+        $tab->bgcolor='#ffffdd';
+        $title = new Label('Teste Formulario');
+        $title->colspan=2;
+        $rowT= $tab->addRow();
+        $title = $rowT->addCell($title);
+        $nomeL = new Label('Nome: ');
+        $row1 = $tab->addRow();
+        $nomeL = $row1->addCell($nomeL);
+        $nomTex = new EditText('nome');
+        $nomTex = $row1->addCell($nomTex);
+        $form->add($tab);
+        $form->show();*/
         
+        $jan = new Window('Janela de teste');
+        $jan->setPosition(20, 20);
+        $jan->setSize(100, 100);
+        $jan->add(new Paragraph('Conteudo da janela'));
+        $jan->show();
+        
+        $jan1 = new Window('Janela de teste2');
+        $jan1->setPosition(120, 60);
+        $jan1->setSize(100, 100);
+        $jan1->add(new Paragraph('Conteudo da janela'));
+        $jan1->show();
         ?>
     </body>
     

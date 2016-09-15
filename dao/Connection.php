@@ -6,20 +6,22 @@ class Connection{
     private $database;
     private $dbCharset;
     private $dbPrefix;
+
     static  $instance=false;
     private function __construct() {
-        $this->dbHost='mysql.hostinger.com.br';
-        $this->dbUser='u632585402_admin';
-        $this->dbPasswd='marcelia23';
-        $this->database= 'u632585402_saldb';
+        $this->dbHost='localhost';
+        $this->dbUser='root';
+        $this->dbPasswd='marcelia';
+        $this->database= 'saldb';
         $this->dbCharset='utf8';
         $this->dbPrefix='sal';
+        $this->conn=  $this->DBConnection();
     }
     function __destruct() {
         
     }
     public function getInstance(){
-        if(!Connection::$instance){
+      if(!Connection::$instance){
             Connection::$instance = new Connection();
         }
         return Connection::$instance;
@@ -62,7 +64,12 @@ function DBInsert($table, array $data){
     $fields = implode(',',  array_keys($data));
     $values= "'".implode("', '", $data)."'";
     $query="insert into {$table}({$fields})values({$values})";
-    return $this->DBExecute($query);
+    //$this->DBExecute($query);
+    $link = $this->DBConnection();
+    $result = mysqli_query($link, $query);
+    $id = mysqli_insert_id($link);
+    $this->DBCloseConnection($link);
+    return $id;
 }
 function DBSelect($table, $params = null,$fields='*'){
     $table = $this->dbPrefix.'_'.$table;

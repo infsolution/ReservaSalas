@@ -10,12 +10,12 @@ abstract class Field{
         self::setEditable(true);
         self::setName($name);
         self::setSize(200);
-        $styleOn = new IStyle('ifield');
+        $styleOn = new Style('field');
         $styleOn->border = 'solid';
         $styleOn->border_color = '#a0a0a0';
         $styleOn->border_width='1px';
         $styleOn->z_index='1';
-        $styleOff = new IStyle('ifield_disable');
+        $styleOff = new Style('field_disable');
         $styleOff->border = 'solid';
         $styleOff->border_color='#a0a0a0';
         $styleOff->border_width='1px';
@@ -23,8 +23,8 @@ abstract class Field{
         $styleOff->color='#a0a0a0';
         $styleOn->show();
         $styleOff->show();
-        $this->tag = new IElement('input');
-        $this->tag->class = 'ifield';
+        $this->tag = new Element('input');
+        $this->tag->class = 'field';
     }
     function setName($name){
         $this->name= $name;

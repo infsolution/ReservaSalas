@@ -1,10 +1,15 @@
 <?php
+function __autoload($classe){
+    if(file_exists("model/{$classe}.php")){
+        require_once "model/{$classe}.php";
+    }
+}
 require 'Connection.php';
-require 'model/Reserve.php';
+
 class DReserve{
-    private  $conn;
+    private $conn;
     function __construct() {
-         $this->conn = Connection::getInstance();  
+                $this->conn = Connection::getInstance(); 
     }
     function __destruct() {
         
@@ -25,6 +30,7 @@ class DReserve{
     function DRNewObject($data){
         $res = new Reserve();
         $res->setIdReserve($data['sal_id_reserve']);
+        $res->setUrl($data['sal_url']);
         $res->setHoraryStart($data['sal_horary_start']);
         $res->setHoraryEnd($data['sal_horary_end']);
         $res->setRoon($data['sal_id_room']);
@@ -50,5 +56,10 @@ class DReserve{
             }
         }
         return $upString;
+    }
+            
+    function loadCalendar(){
+        $dr = new DReserve();
+        return $dr->upStrReserv($dr->loadReserves('reserve'));
     }
 }

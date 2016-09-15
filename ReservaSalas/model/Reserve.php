@@ -2,6 +2,7 @@
 
 class Reserve{
     private $idReserve;
+    private $url;
     private $hoaryStart;
     private $horaryEnd;
     private $roon;
@@ -20,6 +21,13 @@ class Reserve{
     function setIdReserve($idReserve){
         $this->idReserve=$idReserve;
     }
+    function getUrl(){
+        return$this->url;
+    }
+    function setUrl($url){
+        $this->url=$url;
+    }
+            
     function getHoraryStart(){
         return $this->hoaryStart;
     }
@@ -53,7 +61,7 @@ class Reserve{
     }
             
     function toString(){
-        return "{title: '{$this->group}', start: '{$this->day}T{$this->hoaryStart}', end: '{$this->day}T{$this->horaryEnd}'}";
+        return "{title: '{$this->group}',url:'{$this->url}', start: '{$this->day}T{$this->hoaryStart}', end: '{$this->day}T{$this->horaryEnd}'}";
     }
     
 }

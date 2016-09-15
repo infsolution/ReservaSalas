@@ -5,6 +5,10 @@ class Form{
     function __construct($name) {
         $this->name=$name;
     }
+    function setName($name){
+        $this->name=$name;
+    }
+            
     function setEditable($bool){
         if($this->fields){
             foreach ($this->fields as $object){
@@ -13,10 +17,10 @@ class Form{
         }
     }
     function setFields($field){
-        if($field instanceof IField){
+        if($field instanceof Field){
             $name = $field->getName();
             $this->fields[$name]= $field;
-            if($field instanceof IButton){
+            if($field instanceof Button){
                 $field->setFormName($this->name);
             }
         }
@@ -34,7 +38,7 @@ class Form{
     function getData($class = 'StdClass'){
         $object = new $class;
         foreach ($_POST as $key=>$val){
-            if(get_class($this->fields[$key])=='Icombo'){
+            if(get_class($this->fields[$key])=='Combo'){
                 if($val !==0){
                     $object->$key=$val;
                 }
@@ -51,7 +55,7 @@ class Form{
         $this->child=$object;
     }
     function show(){
-        $tag= new IElement('form');
+        $tag= new Element('form');
         $tag->name=$this->name;
         $tag->method='post';
         $tag->add($this->child);

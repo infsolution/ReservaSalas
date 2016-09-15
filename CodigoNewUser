@@ -1,0 +1,98 @@
+$mes = date('M');
+setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+date_default_timezone_set('America/Sao_Paulo');
+$meS = strftime('%B', strtotime('today'));
+$meS = ucfirst($meS);
+$html = new Element('html');
+$head = new Element('head');//Section head
+$title = new Element('title');
+$title->add('Novo usuário');
+$meta = new Element('meta');
+$meta->charset = 'UTF-8';
+$head->add($title);
+$head->add($meta);
+$body = new Element('body');//section body
+$center = new Element('center');
+
+$form = new Form('new_user');//Form new user
+$tab = new Table();
+$tab->width=500;
+$tab->border=0;
+$tab->bgcolor='#ffffff';
+$form->add($tab);
+
+$rowTit = $tab->addRow();
+$titForm = new Label('CADASTRO DE USUÁRIO');
+$titForm->setFontFace('arial');
+$titForm->setFontColor('red');
+$titForm->setFontSize(18);
+$titForm = $rowTit->addCell($titForm);
+$titForm->colspan=2;
+
+$row1 = $tab->addRow();
+$nome = new Label('Nome: ');
+$nome->setFontSize(16);
+$nome = $row1->addCell($nome);
+$tNome = new EditText('nome');
+$tNome->setSize(16);
+$cLabNome = $row1->addCell($tNome);
+
+$row2 = $tab->addRow();
+$mat = new Label('Matricula: ');
+$mat->setFontSize(16);
+$tMat = new EditText('matricula');
+$tMat->setSize(16);
+$mat = $row2->addCell($mat);
+$tMat = $row2->addCell($tMat); 
+
+$row3 = $tab->addRow();
+$datBirth = new Label('Data de Nascimento: ');
+$datBirth->setFontFace(16);
+$datBirth = $row3->addCell($datBirth);
+$tDatBir = new EditText('nascimento');
+$tDatBir->setSize(16);
+$tDatBir = $row3->addCell($tDatBir);
+
+$row4 = $tab->addRow();
+$lEmail = new Label('E-mail: ');
+$lEmail->setFontSize(16);
+$lEmail = $row4->addCell($lEmail);
+$tMail = new EditText('email');
+$tMail->setSize(16);
+$tMail = $row4->addCell($tMail);
+
+
+$row5 = $tab->addRow();
+$lUser = new Label('Usuário: ');
+$lUser->setFontFace(16);
+$lUser = $row5->addCell($lUser);
+$tUser = new EditText('user');
+$tUser->setSize(16);
+$tUser = $row5->addCell($tUser);
+
+$row6 = $tab->addRow();
+$lPassw = new Label('Senha: ');
+$lPassw->setFontSize(16);
+$lPassw = $row6->addCell($lPassw);
+$tPassw = new Password('senha');
+$tPassw->setSize(16);
+$tPassw = $row6->addCell($tPassw);
+
+$row7 = $tab->addRow();
+$lPasCon = new Label('Confirmar senha: ');
+$lPasCon = $row7->addCell($lPasCon);
+$tPasCon = new Password('confirm_senha');
+$tPasCon->setSize(16);
+$tPasCon = $row7->addCell($tPasCon);
+
+$row8 = $tab->addRow();
+$lNull = new Label('Espaco');
+$lNull = $row8->addCell($lNull);
+$actionSave = new Button('save');//implementat
+$actionSave->setAction(new Action('onSend'),'Salvar' );
+$actionSave = $row8->addCell($actionSave);
+$center->add($form);
+$body->add($center);//End section body
+$html->add($head);
+$html->add($body);
+$html->show();

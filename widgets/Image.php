@@ -1,5 +1,5 @@
 <?php
-class Image extends IElement{
+class Image extends Element{
     private $source;
     function __construct($source) {
         parent::__construct('img');

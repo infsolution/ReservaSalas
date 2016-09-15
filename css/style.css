@@ -1,0 +1,41 @@
+#body{
+	width:1200px;
+	height:900px;
+	margin-top:auto;
+	margin-left:auto;
+	margin-bottom:auto;
+	margin-right:auto;
+	background-color:#f0f0f0;
+}
+#header{
+    width:1200px;
+    height:100px;
+    background-color:#ffffff;
+    }
+#content{
+    width:1200px;
+    height:700px;
+    background-color:#ffffff;  
+}  
+#footer{
+    width:1200px;
+    height:100px;
+    background-color:#ffffff;
+    }
+#col-left{
+    width:400px;
+    height:700px;
+    float:left;
+    background-color:#f0f0f0;
+    }
+#col-right{
+    width:800px;
+    height:700px;
+    float:left;
+    background-color:#f0f0f0;
+    }
+#calendar {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
