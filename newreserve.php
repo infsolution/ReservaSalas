@@ -12,6 +12,8 @@
         <script src="jquery/jquery-1.8.2.js"></script>
         <script src="jquery/jquery-ui.js"></script>
         <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link type="text/css" rel="stylesheet" media="screen" href="css/menu.css" />
+        <script src='jquery/menu.js'></script>
         <!--<link type="text/css" rel="stylesheet" media="screen" href="css/style.css" />-->
         <style type="text/css">
             fieldset{width:450px; alignment-adjust:central}
@@ -30,6 +32,19 @@
             <div id="header">
                 
             </div><div id="content">
+                 <!--start menu-->
+                
+                    <div id="sse50">
+                    <div id="sses50">
+                      <ul>
+                        <li><a href="home.php">Home</a></li>  
+                        <li><a href="?menu=50&skin=2&p=Javascript-Menus">Javascript Menus</a></li>
+                        <li><a href="#">Horizontal Menus</a></li>
+                        <li><a href="newreserve.php">Reservar sala</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                    <!--end menu-->
                 <div id="col-left">
                     
                 </div>

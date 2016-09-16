@@ -17,6 +17,7 @@ $today=date("Y-m-d");
         <script src='jquery/moment.min.js'></script>
         <script src='jquery/jquery.min.js'></script>
         <script src='jquery/fullcalendar.min.js'></script>
+        <script src='jquery/menu.js'></script>
 
         <script>
 		$(document).ready(function() {
@@ -37,6 +38,7 @@ $today=date("Y-m-d");
 
 </script>
 <link type="text/css" rel="stylesheet" media="screen" href="css/style.css" />
+<link type="text/css" rel="stylesheet" media="screen" href="css/menu.css" />
     <style type="text/css">
                 fieldset{width:350px; alignment-adjust:central}
                 ul{padding:2px;list-style:none}
@@ -64,17 +66,31 @@ $today=date("Y-m-d");
                 </table>
         
             </div><div id="content">
+                <!--start menu-->
+                
+                    <div id="sse50">
+                    <div id="sses50">
+                      <ul>
+                        <li><a href="home.php">Home</a></li>  
+                        <li><a href="newuser.php">Cadastrar</a></li>
+                        <li><a href="#">Horizontal Menus</a></li>
+                        <li><a href="newreserve.php">Reservar sala</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                    <!--end menu-->
                 <div id="col-left">
-                    <fieldset >
-                        <legend>Agenda Horário de Reserva</legend>
+                    <fieldset  >
+                        <legend>Reserva de hoje</legend>
                         
                         </fieldset>
                     
                 </div>
-                <div id="col-right">
-                    
-                   
+                
+                   <div id="col-right" style="background-color:#fff">
+                       
                     <div id='calendar'></div>
+                    
                 </div>
             </div>
             <div id="footer">

@@ -12,6 +12,8 @@
         <script src="jquery/jquery-1.8.2.js"></script>
         <script src="jquery/jquery-ui.js"></script>
         <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link type="text/css" rel="stylesheet" media="screen" href="css/menu.css" />
+        <script src='jquery/menu.js'></script>
         <!--<link type="text/css" rel="stylesheet" media="screen" href="css/style.css" />-->
         <style type="text/css">
             fieldset{width:450px; alignment-adjust:central}
@@ -24,12 +26,27 @@
              console.log(this.getMoment().format('Do MMMM YYYY'));
         });
 </script>
+<link type="text/css" rel="stylesheet" media="screen" href="css/menu.css" />
+        <script src='jquery/menu.js'></script>
     </head>
     <body>
         <div id="body">
             <div id="header">
                 
             </div><div id="content">
+               <!--start menu-->
+                
+                    <div id="sse50">
+                    <div id="sses50">
+                      <ul>
+                        <li><a href="home.php">Home</a></li> 
+                        <li><a href="newuser.php">Cadastrar</a></li>
+                        <li><a href="#">Horizontal Menus</a></li>
+                        <li><a href="newreserve.php">Reservar sala</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                    <!--end menu-->
                 <div id="col-left">
                     
                 </div>
@@ -41,8 +58,38 @@
                             <ul>
                                 <li><label>Nome do grupo: </label><input type="text" value=""name="name_group"/></li>
                                 <li><label>Data da reserva: </label><input type="text" id = "calendario" name="date_reserve"/></li>
-                                <li><label>Horário de entrada: </label><input type="text" value="" name="horary_start"/></li>
-                                <li><label>Horário de saída: </label><input type="text" value="" name="horary_end"/></li>
+                                <li><label>Horário de entrada: </label>
+                                <select name="horary_start">
+                                    <option value="" selected="selected">Horário de inicio</option>
+                                    <option value="7:00:00">7:00</option>
+                                    <option value="8:00:00">8:00</option>
+                                    <option value="9:00:00">9:00</option>
+                                    <option value="10:00:00">10:00</option>
+                                    <option value="11:00:00">11:00</option>
+                                    <option value="12:00:00">12:00</option>
+                                    <option value="13:00:00">13:00</option>
+                                    <option value="14:00:00">14:00</option>
+                                    <option value="15:00:00">15:00</option>
+                                    <option value="16:00:00">16:00</option>
+                                    <option value="17:00:00">17:00</option>
+                                    
+                                </select>
+                                </li>
+                                <li><label>Horário de saída: </label>
+                                <select name="horary_end">
+                                    <option value="" selected="selected">Horário de término</option>
+                                    <option value="8:00:00">8:00</option>
+                                    <option value="9:00:00">9:00</option>
+                                    <option value="10:00:00">10:00</option>
+                                    <option value="11:00:00">11:00</option>
+                                    <option value="12:00:00">12:00</option>
+                                    <option value="13:00:00">13:00</option>
+                                    <option value="14:00:00">14:00</option>
+                                    <option value="15:00:00">15:00</option>
+                                    <option value="16:00:00">16:00</option>
+                                    <option value="17:00:00">17:00</option>
+                                    <option value="18:00:00">18:00</option>
+                                </select>
                                 <li><label>Sala: </label><input type="text" value="" name="room"/></li>
                                 
                             </ul>
