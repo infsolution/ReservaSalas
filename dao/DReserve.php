@@ -26,6 +26,12 @@ class DReserve{
          $this->conn->DBCloseConnection($link);
          return $data;
     }
+    function DRSelDay($day){
+        $link = $this->conn->DBConnection();
+        $data = $this->conn->DBSelect('reserve',"where sal_day = '{$day}'","*");
+        $this->conn->DBCloseConnection($link);
+        return $data;
+    }
             
     function DRNewObject($data){
         $res = new Reserve();
@@ -61,5 +67,19 @@ class DReserve{
     function loadCalendar(){
         $dr = new DReserve();
         return $dr->upStrReserv($dr->loadReserves('reserve'));
+    }
+    
+    function validRes($dataDb, $start,$end){
+        $val=false;
+        foreach ($dataDb as $value) {
+            if($value['sal_horary_start']==$start||$value['sal_horary_end']==$end){
+            $val=true;  
+            }
+        }
+        return $val;
+    }
+    
+    function ldSelHor(){
+        
     }
 }

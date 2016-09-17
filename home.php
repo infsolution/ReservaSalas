@@ -73,8 +73,9 @@ $today=date("Y-m-d");
                       <ul>
                         <li><a href="home.php">Home</a></li>  
                         <li><a href="newuser.php">Cadastrar</a></li>
-                        <li><a href="#">Horizontal Menus</a></li>
                         <li><a href="newreserve.php">Reservar sala</a></li>
+                        <li><a href="#">Administração</a></li>
+                        <li><a href="#">Login</a></li>
                       </ul>
                     </div>
                   </div>
